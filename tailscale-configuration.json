@@ -1,33 +1,34 @@
 {
-	// Give access to Phylinq 3/4 to people in group DEMO
-	"acls": [
-		{
-			"action": "accept",
-			"src":    ["group:demo"],
-			"dst":    ["tag:demo:*"],
-		},
+    // Give access to Phylinq 3/4 to people in group DEMO
+    "acls": [
+        {
+            "action": "accept",
+            "src": ["group:demo"],
+            "dst": ["tag:demo:*"]
+        },
         // Give access to Phylinq 1/2 to people in group MAIN
-		{
-			"action": "accept",
-			"src":    ["group:main"],
-			"dst":    ["tag:main:*"],
-		},
-	],
-	"groups": {
-		"group:admin": [
-			"juan.maldonado@phyos.net",
-		],
-		"group:main": [
-			"juan.maldonado@phyos.net",
-			"richard.bucholz@phyos.net",
-		],
-		"group:demo": [
-			"demo@phyos.net",
-			"tailscale@phyos.net",
-		],
-	},
-	"tagOwners": {
-		"tag:main": ["juan.maldonado@phyos.net"],
-		"tag:demo": ["juan.maldonado@phyos.net"],
-	},
+        {
+            "action": "accept",
+            "src": ["group:main"],
+            "dst": ["tag:main:*", "tag:demo:*"]
+        },
+        {
+            "action": "accept",
+            "src": ["group:admin"],
+            "dst": ["tag:main:*", "tag:demo:*"]
+        }
+    ],
+    "groups": {
+        "group:admin": ["juan.maldonado@phyos.net"],
+        "group:main": [
+            "juan.maldonado@phyos.net",
+            "richard.bucholz@phyos.net",
+            "vamsi.marla@phyos.net"
+        ],
+        "group:demo": ["demo@phyos.net", "tailscale@phyos.net"]
+    },
+    "tagOwners": {
+        "tag:main": ["juan.maldonado@phyos.net"],
+        "tag:demo": ["juan.maldonado@phyos.net"]
+    }
 }
